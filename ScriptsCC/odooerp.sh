@@ -4,8 +4,9 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt-cache policy docker-ce
 sudo apt install -y docker-ce
-docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:10
-docker run -p 80:8069 --name odoo --link db:db -t odoo
+sudo docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db postgres:10
+sudo docker run -p 80:8069 --name odoo --link db:db -t odoo
+sudo ufw allow from any to any port 80 proto tcp
 
 echo "-----------------------------------------"
 echo "  Terminada la instalacion del ERP ODOO"
