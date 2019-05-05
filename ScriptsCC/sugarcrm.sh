@@ -4,9 +4,8 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt-cache policy docker-ce
 sudo apt install -y docker-ce
-sudo git clone https://github.com/Spantree/docker-sugarcrm
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-cd docker-sugarcrm
-sudo docker-compose up
+sudo docker run --name sugarcrm_db -e MYSQL_ROOT_PASSWORD=33333 -d mariadb
+sudo docker run --name sugarcrm -d --link scrm_db:mysql -p 80:80 franzabzieher/sugarcrm
+
+
 
