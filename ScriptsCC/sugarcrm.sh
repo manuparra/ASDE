@@ -4,3 +4,5 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt-cache policy docker-ce
 sudo apt install -y docker-ce
+sudo git clone https://github.com/Spantree/docker-sugarcrm
+sudo docker-compose up
