@@ -6,6 +6,10 @@ sudo apt-cache policy docker-ce
 sudo apt install -y docker-ce
 sudo docker run --name sugarcrm_db -e MYSQL_ROOT_PASSWORD=33333 -d mariadb
 sudo docker run --name sugarcrm -d --link scrm_db:mysql -p 80:80 franzabzieher/sugarcrm
+sudo ufw allow from any to any port 80 proto tcp
 
+echo "-----------------------------------------"
+echo "  Terminada la instalacion de SUGAR ERP  "
+echo "-----------------------------------------"
 
 
