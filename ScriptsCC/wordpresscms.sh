@@ -6,7 +6,7 @@ sudo apt update
 sudo apt-cache policy docker-ce
 sudo apt install -y docker-ce
 
-docker run --name some-nginx  -d -p 80:80 raulr/nginx-wordpress
+sudo docker run -d -p 80:80 tutum/wordpress
 
 sudo ufw allow from any to any port 80 proto tcp
 
